@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz di Comprensione – Settembre e il Fresh Start Effect</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 30px 28px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0;
+    color: #1a4d2e;
+  }
+  .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+  .question {
+    border-left: 4px solid #1a4d2e;
+    background: #fafafa;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+  }
+  .question p.q-text {
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  label.option {
+    display: block;
+    padding: 8px 10px;
+    margin: 6px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  label.option:hover { background: #eef2f0; }
+  label.option input { margin-right: 8px; }
+  .correct { background: #d4edda !important; border: 1px solid #28a745; }
+  .wrong   { background: #f8d7da !important; border: 1px solid #dc3545; }
+  .feedback {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .feedback.ok { color: #28a745; }
+  .feedback.no { color: #dc3545; }
+  button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    background: #1a4d2e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+  }
+  button:hover { background: #143b23; }
+  button.secondary { background: #6c757d; }
+  button.secondary:hover { background: #565e64; }
+  #result {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz di Comprensione</h1>
+  <p class="subtitle">Settembre e il “Fresh Start Effect” — Livello B1-B2</p>
+
+  <form id="quiz">
+    <!-- Q1 -->
+    <div class="question" data-correct="b">
+      <p class="q-text">1. Quali sono i “buoni propositi” più comuni che l'autrice trova nelle sue note?</p>
+      <label class="option"><input type="radio" name="q1" value="a"> A) Imparare una nuova lingua, cambiare lavoro e viaggiare di più.</label>
+      <label class="option"><input type="radio" name="q1" value="b"> B) Iniziare un nuovo allenamento, provare qualcosa di nuovo, migliorare l'organizzazione e iniziare a risparmiare.</label>
+      <label class="option"><input type="radio" name="q1" value="c"> C) Passare più tempo con la famiglia, leggere più libri e cucinare di più.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question" data-correct="a">
+      <p class="q-text">2. Perché, secondo l'articolo, settembre è un momento speciale per iniziare qualcosa di nuovo?</p>
+      <label class="option"><input type="radio" name="q2" value="a"> A) Perché le temperature calano, si torna in ufficio e a scuola, e le giornate si accorciano, creando un clima ideale per concentrarsi.</label>
+      <label class="option"><input type="radio" name="q2" value="b"> B) Perché è il momento in cui le persone ricevono lo stipendio e hanno più soldi da investire.</label>
+      <label class="option"><input type="radio" name="q2" value="c"> C) Perché in settembre tutti i negozi fanno grandi sconti e le palestre sono gratuite.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question" data-correct="b">
+      <p class="q-text">3. Che cos'è il “fresh start effect”?</p>
+      <label class="option"><input type="radio" name="q3" value="a"> A) Un fenomeno per cui le persone dimenticano i propri obiettivi dopo poche settimane.</label>
+      <label class="option"><input type="radio" name="q3" value="b"> B) Un meccanismo psicologico per cui le date simboliche (come settembre o il lunedì) danno una spinta di motivazione a cambiare comportamento.</label>
+      <label class="option"><input type="radio" name="q3" value="c"> C) Una strategia di marketing usata dalle aziende per vendere più prodotti in autunno.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question" data-correct="b">
+      <p class="q-text">4. Perché molti buoni propositi falliscono dopo poco tempo?</p>
+      <label class="option"><input type="radio" name="q4" value="a"> A) Perché le persone non hanno abbastanza soldi per realizzarli.</label>
+      <label class="option"><input type="radio" name="q4" value="b"> B) Perché la spinta iniziale di entusiasmo non basta a sostenere l'impegno necessario nel lungo periodo.</label>
+      <label class="option"><input type="radio" name="q4" value="c"> C) Perché settembre è troppo presto per iniziare qualcosa di nuovo.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question" data-correct="b">
+      <p class="q-text">5. Cosa significa, secondo l'autrice, “avere dei limiti” quando si pianifica un cambiamento?</p>
+      <label class="option"><input type="radio" name="q5" value="a"> A) Rinunciare a tutti i propri sogni e accettare una vita senza ambizioni.</label>
+      <label class="option"><input type="radio" name="q5" value="b"> B) Avere chiari i propri limiti e le proprie risorse, scegliendo obiettivi realistici e che ci rispecchiano.</label>
+      <label class="option"><input type="radio" name="q5" value="c"> C) Copiare le abitudini delle persone famose sui social, perché sono un modello da seguire.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question" data-correct="a">
+      <p class="q-text">6. Perché l'amica che lavora nel marketing paragona settembre all'inizio del “Q4”?</p>
+      <label class="option"><input type="radio" name="q6" value="a"> A) Perché settembre è il momento in cui si fanno gli sforzi finali per raggiungere gli obiettivi dell'anno e si chiudono i bilanci.</label>
+      <label class="option"><input type="radio" name="q6" value="b"> B) Perché settembre è il mese con più vacanze e feste dell'anno.</label>
+      <label class="option"><input type="radio" name="q6" value="c"> C) Perché le aziende iniziano a pianificare l'anno successivo solo a dicembre.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question" data-correct="c">
+      <p class="q-text">7. Che cosa significa l'espressione “tabula rasa” usata nell'articolo?</p>
+      <label class="option"><input type="radio" name="q7" value="a"> A) Un progetto che è caduto nel dimenticatoio.</label>
+      <label class="option"><input type="radio" name="q7" value="b"> B) Una strategia di marketing per vendere prodotti nuovi.</label>
+      <label class="option"><input type="radio" name="q7" value="c"> C) Una situazione di partenza completamente nuova, come una “pagina bianca”, senza condizionamenti del passato.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="question" data-correct="b">
+      <p class="q-text">8. Secondo l'articolo, qual è un modo sano per portare avanti nuove abitudini nel lungo periodo?</p>
+      <label class="option"><input type="radio" name="q8" value="a"> A) Iscriversi subito in palestra perché va di moda, senza pensarci troppo.</label>
+      <label class="option"><input type="radio" name="q8" value="b"> B) Avere chiari i propri limiti, sapere cosa ci piace fare e scegliere cosa non fare.</label>
+      <label class="option"><input type="radio" name="q8" value="c"> C) Seguire il mito della “girlboss” e non fermarsi mai, senza limiti.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="question" data-correct="a">
+      <p class="q-text">9. Che cosa significa “cadere nel dimenticatoio”?</p>
+      <label class="option"><input type="radio" name="q9" value="a"> A) Essere dimenticato completamente.</label>
+      <label class="option"><input type="radio" name="q9" value="b"> B) Ottenere i risultati positivi di un lavoro fatto in passato.</label>
+      <label class="option"><input type="radio" name="q9" value="c"> C) Unirsi a una tendenza che sta avendo successo.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="question" data-correct="c">
+      <p class="q-text">10. Qual è il messaggio finale dell'articolo?</p>
+      <label class="option"><input type="radio" name="q10" value="a"> A) Bisogna aspettare gennaio per iniziare a cambiare la propria vita.</label>
+      <label class="option"><input type="radio" name="q10" value="b"> B) La vita umana funziona come una multinazionale: settembre è l'unico momento per pianificare.</label>
+      <label class="option"><input type="radio" name="q10" value="c"> C) Ogni momento dell'anno può essere un nuovo inizio: l'importante è fare cose che ci rispecchiano per stare bene, non per diventare qualcuno che non siamo.</label>
+      <div class="feedback"></div>
+    </div>
+
+    <button type="button" id="checkBtn">Controlla le risposte</button>
+    <button type="button" id="resetBtn" class="secondary">Ricomincia</button>
+
+    <div id="result"></div>
+  </form>
+</div>
+
+<script>
+  const questions = document.querySelectorAll('.question');
+  const checkBtn = document.getElementById('checkBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const resultDiv = document.getElementById('result');
+
+  function checkAnswers() {
+    let score = 0;
+    let allAnswered = true;
+
+    questions.forEach((q, index) => {
+      const correct = q.dataset.correct;
+      const selected = q.querySelector('input[type="radio"]:checked');
+      const feedback = q.querySelector('.feedback');
+
+      // Rimuovi evidenziazioni precedenti
+      q.querySelectorAll('label.option').forEach(l => l.classList.remove('correct', 'wrong'));
+      feedback.textContent = '';
+      feedback.className = 'feedback';
+
+      if (!selected) {
+        allAnswered = false;
+        feedback.textContent = '⚠️ Nessuna risposta selezionata.';
+        feedback.classList.add('no');
+        return;
+      }
+
+      const labels = q.querySelectorAll('label.option');
+      // Evidenzia la risposta corretta
+      labels.forEach(l => {
+        if (l.querySelector('input').value === correct) l.classList.add('correct');
+      });
+
+      if (selected.value === correct) {
+        score++;
+        feedback.textContent = '✔ Corretto!';
+        feedback.classList.add('ok');
+      } else {
+        selected.closest('label').classList.add('wrong');
+        feedback.textContent = '✘ Risposta sbagliata.';
+        feedback.classList.add('no');
+      }
+    });
+
+    resultDiv.style.display = 'block';
+    resultDiv.style.background = allAnswered ? (score >= 7 ? '#d4edda' : '#fff3cd') : '#e2e3e5';
+    resultDiv.style.color = allAnswered ? (score >= 7 ? '#155724' : '#856404') : '#383d41';
+    resultDiv.textContent = allAnswered
+      ? `Punteggio: ${score} / ${questions.length}` + (score === questions.length ? ' 🎉 Perfetto!' : '')
+      : `Rispondi a tutte le domande per vedere il punteggio. (Risposte corrette finora: ${score})`;
+  }
+
+  function resetQuiz() {
+    document.getElementById('quiz').reset();
+    questions.forEach(q => {
+      q.querySelectorAll('label.option').forEach(l => l.classList.remove('correct', 'wrong'));
+      const feedback = q.querySelector('.feedback');
+      feedback.textContent = '';
+      feedback.className = 'feedback';
+    });
+    resultDiv.style.display = 'none';
+    resultDiv.textContent = '';
+  }
+
+  checkBtn.addEventListener('click', checkAnswers);
+  resetBtn.addEventListener('click', resetQuiz);
+</script>
+</body>
+</html>
